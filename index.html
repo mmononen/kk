@@ -73,13 +73,6 @@
         createApp({
             data() {
                 return {
-                    authors: [
-                        {
-                            "name": "",
-                            "books": [],
-                            "pages" : 0
-                        }
-                    ],
                     books: [
                         {
                             "id": 1,
@@ -7104,7 +7097,12 @@
                     while (s.length < size) s = pad + s
                     return s
                 },
+
+
+            },
+            computed: {
                 calculateAuthorPages() {
+                    authors = []
                     for (b in this.books) {
                         let i = this.authors.indexOf(b.author)
                         if (this.authors.includes(b.author)) {
@@ -7117,11 +7115,8 @@
                         }
                     }
                     this.authors = this.authors.sort((a, b) => a.pages - b.pages)
-                    return authors[0]
-                },
-
-            },
-            computed: {                                
+                    return authors
+                },                
                 numberOfBooks() {
                     return this.books.length
                 },
