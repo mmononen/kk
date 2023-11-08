@@ -13,7 +13,7 @@
     <div id="app">
         <h1>Oma Keltainen Kirjasto</h1>
         <h5>
-            Päivitetty 2023-11-06<hr>
+            Päivitetty 2023-11-08<hr>
         </h5>
         <ol>
             <li v-for="book in books" :key="book.id">
@@ -21,9 +21,9 @@
                     <div :class="(book.year % 2 === 0 ? 'yearEven' : 'yearOdd')">
                         {{padLeadingChars(book.id, 3, '0')}}.
                         <span v-if="isRead(book)">✔️ </span>
-                        <span v-if="isShelf(book)">📚 </span>                                                                
-                        <strong>{{book.author}}</strong>: <em>{{book.title}}</em> ({{book.year}}) [{{book.pages}} s.]                
-                        <span v-if="isRead(book)"> -- {{book.read_date}}</span>                      
+                        <span v-if="isShelf(book)">📚 </span>
+                        <strong>{{book.author}}</strong>: <em>{{book.title}}</em> ({{book.year}}) [{{book.pages}} s.]
+                        <span v-if="isRead(book)"> -- {{book.read_date}}</span>
                     </div>
                 </span>                
             </li>
@@ -746,9 +746,9 @@
                             "pages": 271,
                             "original_title": "Draussen vor der Tür (1947) & Die Hundeblume (1948) & An diesem Dienstag (1948) & Die traurigen Geranien (1962)",
                             "original_year": 1962,
-                            "read" : false,
+                            "read" : true,
                             "shelf" : true,
-                            "read_date": ""
+                            "read_date": "2023-11-08"
                         },
                         {
                             "id": 53,
